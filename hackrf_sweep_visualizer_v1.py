@@ -519,6 +519,9 @@ body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monosp
 #spectrum-canvas{display:block;width:100%;height:100%}
 
 #db-axis{position:absolute;left:4px;top:4px;bottom:4px;width:55px;
+#uncal-label{position:absolute;bottom:6px;right:8px;color:rgba(255,180,0,0.45);
+             font-size:9px;font-family:'Orbitron',sans-serif;font-weight:900;
+             letter-spacing:2px;pointer-events:none;z-index:2;}
          display:flex;flex-direction:column;justify-content:space-between;
          padding:2px;color:rgba(113,141,169,0.7);font-size:9px;font-family:monospace;
          pointer-events:none;z-index:2;text-shadow:0 1px 2px #000}
@@ -773,6 +776,7 @@ body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monosp
     </div>
 
     <div id="spectrum-wrap">
+    <div id="uncal-label">UNCALIBRATED</div>
       <div id="db-axis">
         <span>-20 dBm</span>
         <span>-50 dBm</span>

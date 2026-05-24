@@ -36,6 +36,7 @@ When no hardware is connected the tool **automatically falls back to a built-in 
 - **Frequency marker pins** — click anywhere on spectrum or waterfall to drop a pin; up to 10 stored
 - **Live hover tooltip** — mouse-over shows exact frequency and dBm value plus named signal identification
 - **Peak readout** — dedicated display showing the strongest signal frequency and level
+- **Uncalibrated label** — a persistent on-screen reminder that dBm readings are relative, not absolute calibrated power levels
 - **PNG export** — snapshot the spectrum + waterfall to a timestamped PNG file
 - **Built-in console log** — collapsible live log of WebSocket events, hardware errors, and sweep status
 - **Keyboard shortcuts** — `Space` pause, `A` auto-calibrate, `R` toggle average, `S` toggle peak hold, `M` clear markers
@@ -474,6 +475,16 @@ The simulator models these signals:
 | 1090.0 MHz | ADS-B Mode-S |
 
 Gain and bin-width settings affect the simulated noise floor, so the controls are fully interactive even without hardware.
+
+---
+
+## A note on dBm readings
+
+The dBm values shown on the spectrum display and waterfall are **not calibrated absolute power readings**. They are raw ADC values scaled roughly to dBm based on your current LNA and VGA gain settings. This means if you see -60 dBm on screen, it does not mean the signal at your antenna is truly -60 dBm — it's an estimate that hasn't been corrected against a known reference.
+
+A proper absolute power reading would require feeding in a signal of known power, then offsetting the display to match reality. This would also account for cable loss, antenna characteristics, connector losses, and the HackRF's own gain and noise figure variations across frequency which are not perfectly flat across 1 MHz to 6 GHz.
+
+For this reason the spectrum display shows a persistent **UNCALIBRATED** label. Treat all dBm numbers as relative — useful for comparing signals against each other and spotting what's louder or quieter, but not as a precision power meter. Calibration support is something that may come in a future version.
 
 ---
 

@@ -25,3 +25,4 @@
 - Windows (`taskkill`) and Linux/macOS (`lsof`, `fuser`, `killall`) device management
 - Collapsible console log with colour-coded severity levels
 - Factory reset button
+- Persistent "UNCALIBRATED" label on spectrum display to indicate dBm readings are relative, not absolute calibrated power
