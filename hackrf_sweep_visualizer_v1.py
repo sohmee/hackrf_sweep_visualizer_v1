@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 HackRF SDR Master Console — Standalone Edition
-Created by sohmee & Google AI Studio Build
+Created by sohmee 
 Requirements: pip3 install flask flask-sock numpy (optional but highly recommended)
               sudo apt install hackrf lsof psmisc
 Run local server: python3 hackrf_sweep_visualizer.py
